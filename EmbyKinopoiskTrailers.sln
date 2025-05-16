@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbyKinopoiskTrailers", "EmbyKinopoiskTrailers\EmbyKinopoiskTrailers.csproj", "{DEF8B5B0-95D4-4F5B-AFA4-B2F3B441E2CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbyKinopoiskTrailers.Tests", "EmbyKinopoiskTrailers.Tests\EmbyKinopoiskTrailers.Tests.csproj", "{24A83DDC-DA84-4670-821D-DED7745E3F7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEF8B5B0-95D4-4F5B-AFA4-B2F3B441E2CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEF8B5B0-95D4-4F5B-AFA4-B2F3B441E2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEF8B5B0-95D4-4F5B-AFA4-B2F3B441E2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEF8B5B0-95D4-4F5B-AFA4-B2F3B441E2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24A83DDC-DA84-4670-821D-DED7745E3F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24A83DDC-DA84-4670-821D-DED7745E3F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24A83DDC-DA84-4670-821D-DED7745E3F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24A83DDC-DA84-4670-821D-DED7745E3F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
