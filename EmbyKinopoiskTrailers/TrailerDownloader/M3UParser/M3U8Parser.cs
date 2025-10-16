@@ -38,16 +38,16 @@ namespace EmbyKinopoiskTrailers.TrailerDownloader.M3UParser
             List<int> resolutions = new List<int>();
             foreach (var line in lines)
             {
-                if (line.StartsWith(ExtXMedia))
+                if (line.StartsWith(ExtXMedia, StringComparison.InvariantCulture))
                 {
                     audio.Add(new XMedia(line, host));
                 }
-                else if (line.StartsWith(ExtXStreamInf))
+                else if (line.StartsWith(ExtXStreamInf, StringComparison.InvariantCulture))
                 {
                     streamInf = new XStreamInf(line);
                     resolutions.Add(streamInf.ResolutionY);
                 }
-                else if (!line.StartsWith("#") && streamInf != null && !string.IsNullOrWhiteSpace(line))
+                else if (!line.StartsWith("#", StringComparison.InvariantCulture) && streamInf != null && !string.IsNullOrWhiteSpace(line))
                 {
                     streamInf.Url = host + line;
                     video.Add(streamInf);
@@ -98,7 +98,7 @@ namespace EmbyKinopoiskTrailers.TrailerDownloader.M3UParser
                 var targetDurationLength = 0;
                 foreach (var line in list)
                 {
-                    if (line.StartsWith(ExtXTargetDuration))
+                    if (line.StartsWith(ExtXTargetDuration, StringComparison.InvariantCulture))
                     {
                         var match = ExtXTargetDurationRegex.Match(line);
                         if (match.Success && int.TryParse(match.Groups["l"].Value, out var itemDuration))
@@ -107,7 +107,7 @@ namespace EmbyKinopoiskTrailers.TrailerDownloader.M3UParser
                             _logger.Debug($"TargetDuration is '{targetDurationLength}'");
                         }
                     }
-                    else if (!line.StartsWith("#") && !string.IsNullOrWhiteSpace(line))
+                    else if (!line.StartsWith("#", StringComparison.InvariantCulture) && !string.IsNullOrWhiteSpace(line))
                     {
                         toReturn.Add(line);
                     }
@@ -126,7 +126,7 @@ namespace EmbyKinopoiskTrailers.TrailerDownloader.M3UParser
             {
                 return m3U8Content
                     .Split(NewLineSplitter, StringSplitOptions.RemoveEmptyEntries)
-                    .Where(l => !l.StartsWith("#"))
+                    .Where(l => !l.StartsWith("#", StringComparison.InvariantCulture))
                     .ToList();
             }
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Text.RegularExpressions;
 
 namespace EmbyKinopoiskTrailers.TrailerDownloader.M3UParser.Model
@@ -41,7 +42,7 @@ namespace EmbyKinopoiskTrailers.TrailerDownloader.M3UParser.Model
                         Language = value;
                         break;
                     case "URI":
-                        Url = value.StartsWith("/") ? host + value : value;
+                        Url = value.StartsWith("/", StringComparison.InvariantCulture) ? host + value : value;
                         break;
                 }
             }

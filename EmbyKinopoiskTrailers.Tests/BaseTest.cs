@@ -116,8 +116,6 @@ public abstract class BaseTest
             _httpClient,
             _jsonSerializer,
             _activityManager.Object,
-            _libraryManager.Object,
-            _collectionManager.Object,
             _notificationManager.Object
         );
         Plugin.Instance.SetAttributes("EmbyKinopoiskTrailers.dll", string.Empty, new Version(1, 0, 0));
@@ -192,7 +190,7 @@ public abstract class BaseTest
     private void PrintMockInvocations(Mock mock)
     {
         _logger.Info($"Name: {mock.Object.GetType().Name}");
-        foreach (IInvocation? invocation in mock.Invocations)
+        foreach (IInvocation invocation in mock.Invocations)
         {
             _logger.Info(invocation);
         }

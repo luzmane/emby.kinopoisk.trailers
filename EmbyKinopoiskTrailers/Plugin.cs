@@ -12,8 +12,6 @@ using EmbyKinopoiskTrailers.Configuration;
 using MediaBrowser.Common.Configuration;
 using MediaBrowser.Common.Net;
 using MediaBrowser.Common.Plugins;
-using MediaBrowser.Controller.Collections;
-using MediaBrowser.Controller.Library;
 using MediaBrowser.Controller.Notifications;
 using MediaBrowser.Model.Activity;
 using MediaBrowser.Model.Drawing;
@@ -44,8 +42,6 @@ namespace EmbyKinopoiskTrailers
         private readonly ILogManager _logManager;
         private readonly ILogger _log;
         private readonly IActivityManager _activityManager;
-        private readonly ILibraryManager _libraryManager;
-        private readonly ICollectionManager _collectionManager;
         private readonly INotificationManager _notificationManager;
 
         /// <inheritdoc />
@@ -66,8 +62,6 @@ namespace EmbyKinopoiskTrailers
         /// <param name="httpClient">Instance of the <see cref="IHttpClient"/> interface.</param>
         /// <param name="jsonSerializer">Instance of the <see cref="IJsonSerializer"/> interface.</param>
         /// <param name="activityManager">Instance of the <see cref="IActivityManager"/> interface.</param>
-        /// <param name="libraryManager">Instance of the <see cref="ILibraryManager"/> interface.</param>
-        /// <param name="collectionManager">Instance of the <see cref="ICollectionManager"/> interface.</param>
         /// <param name="notificationManager">Instance of the <see cref="INotificationManager"/> interface.</param>
         public Plugin(
             IApplicationPaths applicationPaths,
@@ -76,8 +70,6 @@ namespace EmbyKinopoiskTrailers
             IHttpClient httpClient,
             IJsonSerializer jsonSerializer,
             IActivityManager activityManager,
-            ILibraryManager libraryManager,
-            ICollectionManager collectionManager,
             INotificationManager notificationManager)
             : base(applicationPaths, xmlSerializer)
         {
@@ -89,8 +81,6 @@ namespace EmbyKinopoiskTrailers
             _logManager = logManager;
             _activityManager = activityManager;
             _log = _logManager.GetLogger(PluginKey);
-            _libraryManager = libraryManager;
-            _collectionManager = collectionManager;
             _notificationManager = notificationManager;
         }
 
@@ -108,13 +98,13 @@ namespace EmbyKinopoiskTrailers
             {
                 new PluginPageInfo
                 {
-                    Name = "kinopoiskru",
-                    EmbeddedResourcePath = GetType().Namespace + ".Configuration.kinopoiskru.html"
+                    Name = "kinopoisktrailers",
+                    EmbeddedResourcePath = GetType().Namespace + ".Configuration.kinopoisktrailers.html"
                 },
                 new PluginPageInfo
                 {
-                    Name = "kinopoiskrujs",
-                    EmbeddedResourcePath = GetType().Namespace + ".Configuration.kinopoiskru.js"
+                    Name = "kinopoisktrailersjs",
+                    EmbeddedResourcePath = GetType().Namespace + ".Configuration.kinopoisktrailers.js"
                 }
             };
         }
