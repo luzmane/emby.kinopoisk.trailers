@@ -15,7 +15,7 @@
     <FileVersion>$(Version)</FileVersion>
     <Authors>Evgeniy Luzman</Authors>
     <Copyright>Copyright (c) 2023 Evgeniy Luzman</Copyright>
-    <Description>//TODO: fill</Description>
+    <Description>An Emby plugin for downloading movie and TV show trailers from kinopoisk.ru using third-party APIs.</Description>
     <PackageId>Emby.Kinopoisk.Trailers</PackageId>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageTags>emby kinopoisk trailers</PackageTags>
@@ -23,7 +23,7 @@
     <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../RELEASE-NOTES.md"))</PackageReleaseNotes>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/luzmane/emby.kinopoisk.trailers/</RepositoryUrl>
-    <Title>//TODO: fill</Title>
+    <Title>Kinopoisk trailer loader plugin for Emby</Title>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="../README.md" Pack="true" PackagePath=""/>
+    <None Include="..\README.md" Pack="true" PackagePath=""/>
   </ItemGroup>
 
   <ItemGroup>
@@ -43,23 +43,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="i18n/Configuration/ru.json"/>
-    <EmbeddedResource Include="i18n/Configuration/en-US.json"/>
-    <EmbeddedResource Include="i18n/Configuration/uk.json"/>
-    <EmbeddedResource Include="i18n/KpTrailerChannel/en-US.json" />
-    <EmbeddedResource Include="i18n/KpTrailerChannel/ru.json" />
-    <EmbeddedResource Include="i18n/KpTrailerChannel/uk.json" />
-    <EmbeddedResource Include="i18n/ScheduledTasks/KinopoiskCleanIntros/en-US.json" />
-    <EmbeddedResource Include="i18n/ScheduledTasks/KinopoiskCleanIntros/ru.json" />
-    <EmbeddedResource Include="i18n/ScheduledTasks/KinopoiskCleanIntros/uk.json" />
-    <EmbeddedResource Include="i18n/ScheduledTasks/KinopoiskTrailersNewVersion/en-US.json" />
-    <EmbeddedResource Include="i18n/ScheduledTasks/KinopoiskTrailersNewVersion/ru.json" />
-    <EmbeddedResource Include="i18n/ScheduledTasks/KinopoiskTrailersNewVersion/uk.json" />
+    <EmbeddedResource Include="i18n\Configuration\ru.json"/>
+    <EmbeddedResource Include="i18n\Configuration\en-US.json"/>
+    <EmbeddedResource Include="i18n\Configuration\uk.json"/>
+    <EmbeddedResource Include="i18n\KpTrailerChannel\en-US.json"/>
+    <EmbeddedResource Include="i18n\KpTrailerChannel\ru.json"/>
+    <EmbeddedResource Include="i18n\KpTrailerChannel\uk.json"/>
+    <EmbeddedResource Include="i18n\ScheduledTasks\KinopoiskTrailersCleanIntros\en-US.json"/>
+    <EmbeddedResource Include="i18n\ScheduledTasks\KinopoiskTrailersCleanIntros\ru.json"/>
+    <EmbeddedResource Include="i18n\ScheduledTasks\KinopoiskTrailersCleanIntros\uk.json"/>
+    <EmbeddedResource Include="i18n\ScheduledTasks\KinopoiskTrailersNewVersion\en-US.json"/>
+    <EmbeddedResource Include="i18n\ScheduledTasks\KinopoiskTrailersNewVersion\ru.json"/>
+    <EmbeddedResource Include="i18n\ScheduledTasks\KinopoiskTrailersNewVersion\uk.json"/>
 
     <EmbeddedResource Include="thumb.png" />
 
-    <EmbeddedResource Include="Configuration/kinopoisktrailers.html" />
-    <EmbeddedResource Include="Configuration/kinopoisktrailers.js" />
+    <EmbeddedResource Include="Configuration\kinopoisktrailers.html"/>
+    <EmbeddedResource Include="Configuration\kinopoisktrailers.js"/>
   </ItemGroup>
 
 </Project>
