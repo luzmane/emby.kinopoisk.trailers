@@ -1,3 +1,6 @@
+v.1.0.2
+- [fix] Translation for scheduled tasks
+
 v.1.0.1
 - [fix] Incorrect configuration page name
 - [fix] resolve warnings in code
